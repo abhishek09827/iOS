@@ -1,0 +1,13 @@
+func firstRecurringCharacter(text: String) -> String? {
+  var previouslyEncounteredCharacters = Set<Character>()
+  
+  for character in text {
+    if previouslyEncounteredCharacters.contains(character) {
+      return String(character)
+    } else {
+      previouslyEncounteredCharacters.insert(character)
+    }
+  }
+  
+  return nil
+}
