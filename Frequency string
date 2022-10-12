@@ -1,16 +1,20 @@
-//counts a specific letter in a string
+import Foundation
 func SpecificLetterCount(str:String, char:Character) ->Int {
     var letters = Array(str); var count = 0
     for letter in letters {
         if letter == char {
             count += 1
+            
         }
+        
     }
+    print(count)
     return count
+    
 }
 // counts a specific word in a string
 func SpecificWordCount(str:String, word:String) ->Int {
-    var words = str.componentsSeparatedByString(" "); var count = 0
+    var words = str.components(separatedBy: " "); var count = 0
     for thing in words {
         if thing == word {
             count += 1
@@ -20,9 +24,11 @@ func SpecificWordCount(str:String, word:String) ->Int {
 }
 
 func CountAllWords(str:String) ->[String: Int] {
-    var words = str.componentsSeparatedByString(" "); var wordcount = [String: Int]()
+    var words = str.components(separatedBy: " "); var wordcount = [String: Int]()
     for word in words {
-        wordcount.updateValue(SpecificWordCount(str, word), forKey: word)
+        wordcount.updateValue(SpecificWordCount(str: str, word: word), forKey: word)
     }
     return wordcount
 }
+SpecificLetterCount(str: "aabbcc", char: "a")
+
