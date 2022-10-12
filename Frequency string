@@ -12,23 +12,6 @@ func SpecificLetterCount(str:String, char:Character) ->Int {
     return count
     
 }
-// counts a specific word in a string
-func SpecificWordCount(str:String, word:String) ->Int {
-    var words = str.components(separatedBy: " "); var count = 0
-    for thing in words {
-        if thing == word {
-            count += 1
-        }
-    }
-    return count
-}
 
-func CountAllWords(str:String) ->[String: Int] {
-    var words = str.components(separatedBy: " "); var wordcount = [String: Int]()
-    for word in words {
-        wordcount.updateValue(SpecificWordCount(str: str, word: word), forKey: word)
-    }
-    return wordcount
-}
 SpecificLetterCount(str: "aabbcc", char: "a")
 
