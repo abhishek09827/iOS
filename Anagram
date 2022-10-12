@@ -1,12 +1,24 @@
+import Foundation
 func anagramCheck2(a: String, b: String) -> Bool {
-    guard a.characters.count == b.characters.count else { return false }
+    guard a.count == b.count 
+    else { return false }
     let aSet = NSCountedSet()
     let bSet = NSCountedSet()
-    for c in a.characters {
+    for c in a {
         aSet.add(c)
     }
-    for c in b.characters {
+    for c in b {
         bSet.add(c)
     }
+    if aSet == bSet{
+        print("True")
+    }
+    else{
+        print("False")
+    }
+    
     return aSet == bSet
+    
+    
 }
+anagramCheck2(a: "aba", b: "aaa")
