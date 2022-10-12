@@ -1,0 +1,28 @@
+//counts a specific letter in a string
+func SpecificLetterCount(str:String, char:Character) ->Int {
+    var letters = Array(str); var count = 0
+    for letter in letters {
+        if letter == char {
+            count += 1
+        }
+    }
+    return count
+}
+// counts a specific word in a string
+func SpecificWordCount(str:String, word:String) ->Int {
+    var words = str.componentsSeparatedByString(" "); var count = 0
+    for thing in words {
+        if thing == word {
+            count += 1
+        }
+    }
+    return count
+}
+
+func CountAllWords(str:String) ->[String: Int] {
+    var words = str.componentsSeparatedByString(" "); var wordcount = [String: Int]()
+    for word in words {
+        wordcount.updateValue(SpecificWordCount(str, word), forKey: word)
+    }
+    return wordcount
+}
