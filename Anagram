@@ -1,0 +1,12 @@
+func anagramCheck2(a: String, b: String) -> Bool {
+    guard a.characters.count == b.characters.count else { return false }
+    let aSet = NSCountedSet()
+    let bSet = NSCountedSet()
+    for c in a.characters {
+        aSet.add(c)
+    }
+    for c in b.characters {
+        bSet.add(c)
+    }
+    return aSet == bSet
+}
